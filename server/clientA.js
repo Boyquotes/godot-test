@@ -3,6 +3,7 @@ var dgram = require('dgram');
 
 // based on http://www.bford.info/pub/net/p2pnat/index.html
 
+const dns = require('dns');
 
 
 var socket = dgram.createSocket('udp4');
@@ -17,14 +18,14 @@ socket.on('message', function (message, remote) {
 
 function sendMessageToS () {
 	var serverPort = 33333;
-	var serverHost = 'S.S.S.S';
-
-	var message = new Buffer('A');
-	socket.send(message, 0, message.length, serverPort, serverHost, function (err, nrOfBytesSent) {
-	    if (err) return console.log(err);
-	    console.log('UDP message sent to ' + serverHost +':'+ serverPort);
-	    // socket.close();
-	});
+  dns.lookup('https://coworking-space-vr-api.herokuapp.com/', function(err, serverHost) {
+  	var message = new Buffer('A');
+  	socket.send(message, 0, message.length, serverPort, serverHost, function (err, nrOfBytesSent) {
+  	    if (err) return console.log(err);
+  	    console.log('UDP message sent to ' + serverHost +':'+ serverPort);
+  	    // socket.close();
+  	});
+  });
 }
 
 sendMessageToS();
