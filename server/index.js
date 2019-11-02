@@ -5,9 +5,10 @@ var dgram = require('dgram');
 
 const express = require('express')
 const server = express()
-server.get('/', (req, res) => res.send('Hello World!'))
 var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
 var server_host = process.env.YOUR_HOST || '0.0.0.0';
+server.get('/', (req, res) => res.send('Hello World!'))
+server.get('/port', (req, res) => res.send(server_port+''))
 server.listen(server_port, server_host, function() {
     console.log('Listening on port %d', server_port, server_host);
 });
