@@ -40,9 +40,9 @@ server.listen(server_port, () => {
 
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/port', (req, res) => res.send(server_port+''))
-app.listen(server_port, server_host, function() {
-    console.log('Listening on port %d', server_port, server_host);
-});
+// app.listen(server_port, server_host, function() {
+//     console.log('Listening on port %d', server_port, server_host);
+// });
 
 // var socket = dgram.createSocket('udp4');
 // socket.bind(server_port, server_host);
