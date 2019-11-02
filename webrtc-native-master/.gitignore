@@ -1,7 +1,0 @@
-bin/*
-*.os
-*.a
-*.lib
-.sconsign.dblite
-*.obj
-*.swp
