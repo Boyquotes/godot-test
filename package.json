@@ -2,8 +2,11 @@
   "name": "node-udp-hole-punching",
   "version": "0.0.1",
   "scripts": {
-    "start": "node server/app"
+    "start": "node server/index"
   },
   "dependencies": {
+  },
+  "engines": {
+    "node": ">= 12 < 13"
   }
 }
