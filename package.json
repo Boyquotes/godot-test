@@ -2,7 +2,7 @@
   "name": "node-udp-hole-punching",
   "version": "0.0.1",
   "scripts": {
-    "start": "node app"
+    "start": "node server/app"
   },
   "dependencies": {
   }
