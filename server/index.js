@@ -9,11 +9,11 @@ server.get('/', (req, res) => res.send('Hello World!'))
 var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
 var server_host = process.env.YOUR_HOST || '0.0.0.0';
 server.listen(server_port, server_host, function() {
-    console.log('Listening on port %d', server_port);
+    console.log('Listening on port %d', server_port, server_host);
 });
 
 var socket = dgram.createSocket('udp4');
-socket.bind(33333);
+socket.bind(33333, server_host);
 
 var publicEndpointA = null;
 var publicEndpointB = null;
@@ -46,6 +46,7 @@ socket.on('message', function (message, remote) {
 
 
 function sendPublicDataToClients () {
+    console.log(publicEndpointA, publicEndpointB);
 	if(publicEndpointA && publicEndpointB) {
 
 		var messageForA = new Buffer(JSON.stringify(publicEndpointB));

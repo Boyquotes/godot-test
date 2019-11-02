@@ -17,7 +17,7 @@ socket.on('message', function (message, remote) {
 
 function sendMessageToS () {
 	var serverPort = 33333;
-	dns.lookup('https://coworking-space-vr-api.herokuapp.com/', function(err, serverHost) {
+	dns.lookup('coworking-space-vr-api.herokuapp.com', function(err, serverHost) {
     console.log('foo', err, 'bar', serverHost);
   	var message = new Buffer('B');
   	socket.send(message, 0, message.length, serverPort, serverHost, function (err, nrOfBytesSent) {
