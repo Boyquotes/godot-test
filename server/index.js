@@ -7,11 +7,11 @@ const express = require('express')
 const server = express()
 var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
 var server_host = process.env.YOUR_HOST || '0.0.0.0';
-// server.get('/', (req, res) => res.send('Hello World!'))
-// server.get('/port', (req, res) => res.send(server_port+''))
-// server.listen(server_port, server_host, function() {
-//     console.log('Listening on port %d', server_port, server_host);
-// });
+server.get('/', (req, res) => res.send('Hello World!'))
+server.get('/port', (req, res) => res.send(server_port+''))
+server.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port, server_host);
+});
 
 var socket = dgram.createSocket('udp4');
 socket.bind(server_port, server_host);
