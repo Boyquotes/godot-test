@@ -15,9 +15,37 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2d_test"
+config/name="Pong Multiplayer"
+run/main_scene="res://lobby.tscn"
 config/icon="res://icon.png"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/size/width=640
+window/size/height=400
+stretch_2d=true
+
+[gdnative]
+
+singletons=[  ]
+
+[input]
+
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+viewport/default_clear_color=Color( 0, 0, 0, 1 )
